@@ -1,0 +1,278 @@
+@font-face {
+font-family: "Raleway";
+src: url("fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icons/icomoon.eot?vay5tx');
+  src:  url('fonts/icons/icomoon.eot?vay5tx#iefix') format('embedded-opentype'),
+    url('fonts/icons/icomoon.ttf?vay5tx') format('truetype'),
+    url('fonts/icons/icomoon.woff?vay5tx') format('woff'),
+    url('fonts/icons/icomoon.svg?vay5tx#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+$font: 'Raleway', sans-serif; 
+$orange: #CC4B00;
+$yellow: #FFC700;
+$lightblue: #006EF5;
+$blue: #004EAE;
+$darkblue: #013371;
+$gray: #767676;
+$darkgray: #333;
+$white: #fff;
+
+$fs-content: 14px;
+$fs-form: 16px;
+$fs-nav: 18px;
+$fs-heading: 36px;
+
+body { 
+font-family:$font;
+background-color:$white;
+margin: 0px !important;
+.logged-in {
+	padding-top: 46px;
+	@media(min-width: 768px){
+	padding-top: 32px;
+	}
+}
+} 
+
+.hidden {
+	display: none;
+}
+
+.hidden-mobile {
+@media(max-width:767px){
+	display: none;
+}
+}
+
+.icon-cheveron-right:before {
+  content: "\26";
+  color: $orange;
+  vertical-align: middle;
+  font-size: 18px;
+}
+.icon-close:before {
+  content: "\e901";
+}
+.icon-logo:before {
+  content: "\e902";
+}
+.icon-menu:before {
+  content: "\e903";
+}
+
+
+a{
+	color:$orange;
+}
+p {
+	color:$darkgray;
+	font-size: $fs-content;
+	line-height: 18px;
+}
+h1, h2, h3, h4, h5, h6 {
+font-size: $fs-heading;	
+}
+
+/*LOGO STYLING*/
+
+.logo-container {
+	width: 100%;
+	background-color:$lightblue;
+	padding: 7px 0px;
+	@media(min-width: 768px){
+	padding: 0px 20px 0px 40px;
+	}
+	a {
+	text-decoration: none;
+	color: $white;
+	}
+	h1{
+	display: none;
+	@media(min-width: 768px){
+	display: inline-block;
+	margin-left: 12px;
+	}
+	font-size: $fs-nav;
+	font-weight: 700;
+	}
+	@media(max-width: 767px){
+	text-align: center;
+	}
+	.icon-logo {
+	&:before {
+	font-size: 30px;
+	@media(min-width:768px){
+	line-height: 46px;
+	vertical-align: bottom;
+	}
+	}
+	}
+}
+
+form {
+	font-size: $fs-form;
+}
+
+nav {
+background-color: $blue;
+ul {
+padding: 20px;
+list-style-type: none;
+@media(max-width: 767px){
+	padding-left: 0px !important;
+	box-sizing: border-box;
+	background-color: $blue;
+	padding: 0px;
+	}
+margin-top: 0px !important;
+	li {
+	position: relative;	
+	border-bottom: 1px solid $lightblue;
+	font-size: $fs-nav;
+	padding: 20px;
+	@media(min-width: 768px){
+	padding: 8px 15px;
+	}
+	&:hover {	
+	background-color:$darkblue;
+	}
+	a{
+	color:$white;
+	&:hover {
+	color:$yellow;
+	}
+	}
+	@media(min-width: 768px){
+	display: inline;
+	border: none;
+	padding: 20px;
+	position: unset;
+	}
+	}
+	.current-menu-item{
+	background-color:$darkblue;
+	a {
+	color:$yellow;
+	}
+	}
+}
+}
+
+/*MOBILE MENU STYLING */
+.menu-toggle {
+	display: block;
+	position: absolute;
+	top:4px;
+	left: 0px;
+	width: 35px;
+	height: 46px;
+	cursor: pointer;
+	@media(min-width: 768px) {
+	display: none;
+	}
+	.icon-close{
+	&:before{
+	color: $white;
+	font-size: 16px;
+	line-height: 40px;
+	background-color: $blue;
+	padding: 20px;
+	}
+	}
+	.icon-menu {
+	&:before {
+	color: $white;
+	font-size: 16px;
+	line-height: 40px;
+	padding: 20px;
+	}
+	}
+}
+
+.open {
+	background-color: $blue;
+}
+
+.logged-in {
+	.menu-toggle{
+	top: 46px;
+	}
+}
+
+
+
+
+main {
+	padding: 20px;
+	max-width: 2000px;
+	margin: 0 auto;
+
+}
+
+.postPreview {
+@media(min-width: 768px)
+{	display: flex;
+display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+	flex-direction: row;
+	}
+	max-width: 100%;
+	img {
+	max-width: 100%;
+	height: auto;
+	@media(min-width: 768px){
+	max-width: 70%;
+	height: 100%;
+	}
+	}
+	.previewText {
+	@media(min-width: 768px){	
+	float: right;
+	width: 30%;
+	padding-left: 20px;
+	}
+	h2 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	}
+	.postMeta {
+	p {
+	color: $gray;
+	margin-bottom: 0px;
+	}
+
+	}
+}
+}
+.wp-block-image {
+img{
+	height: auto;
+}
+}
+
